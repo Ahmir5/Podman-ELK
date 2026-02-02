@@ -1,0 +1,12 @@
+server.host: kib01
+server.ssl.enabled: true
+server.ssl.certificate: /usr/share/kibana/config/certs/kib01.crt
+server.ssl.key: /usr/share/kibana/config/certs/kib01.key
+server.shutdownTimeout: 5s
+elasticsearch.hosts: [https://es01:9200]
+elasticsearch.ssl.verificationMode: full
+elasticsearch.ssl.certificateAuthorities: /usr/share/kibana/config/certs/http_ca.crt
+elasticsearch.username: kibana_system
+elasticsearch.password: 'This will Get generated during script using regex'
+monitoring.ui.container.elasticsearch.enabled: true
+xpack.fleet.outputs: [{id: fleet-default-output, name: default, is_default: true, is_default_monitoring: true, type: elasticsearch, hosts: [https://es01:9200], ca_trusted_fingerprint: b4ee29919c689adb6aad5ef1cef4bab1faf21fa08253bb5f9bde2863aaf5e5cb}]
