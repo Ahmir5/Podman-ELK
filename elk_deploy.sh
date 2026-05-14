@@ -1,6 +1,8 @@
 #!/bin/bash
 
 set -ea
+touch .env
+echo "ELASTIC_USERNAME=\"elastic\"" > .env
 source .env
 
 podman network create --ignore  elastic
