@@ -1,3 +1,4 @@
 .env
 logstash.conf
 certs/
+kibana.yml
